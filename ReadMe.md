@@ -11,7 +11,7 @@ objcopy -O binary --only-section=.text ./<binary_name> <output_payload>
 ```
 
 ## NOTE
-There will be created a script in the future that will make the strip automatically. This will be after I finish with the netowrk functionality of the reverse shell, till then stay tuned .... 
+There will be created a script in the future that will make the strip automatically. This will be after I finish with the network functionality of the reverse shell, till then stay tuned .... 
 
 ### THIS FOR EDUCATIONAL PURPOSES ONLY:
-Iam doing the old way and not use AI for the code, I only to use it in order to understand things that I may miss as knowledge to achieve this. WHY ??!!! Cause It's fun !!!!
+Iam doing this the old way and trying not use AI for the code, I only to use it in order to understand things that I may miss as knowledge to achieve this. WHY ??!!! Because It's fun and I can !!!!
