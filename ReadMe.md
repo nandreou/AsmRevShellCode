@@ -7,7 +7,7 @@ This program generates a shellcode payload designed to execute `/bin/sh` on a ta
 You can compile the source file using the provided `makefile`. To extract the raw section .text bytes, strip the file metadata and elf64 segments using `objcopy`:
 
 ```bash
-objcopy -O binary --only-section=.text ./<binary_name> <output_payload.bin>
+objcopy -O binary --only-section=.text ./<binary_name> <output_payload>
 ```
 
 ## NOTE
