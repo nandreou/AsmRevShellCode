@@ -1,6 +1,6 @@
 ### 64-Bit Linux Reverse Shell Payload (x86-64 Assembly)
 
-This program generates a shellcode payload designed to execute `/bin/sh` on a target Linux system. Using a `hexdump` you will notice the usefull section .text is free of nil bytes.
+This program generates a shellcode payload designed to execute `/bin/sh` on a target vulnerable software that runs on a Linux system. Using a `hexdump` you will notice the usefull section .text is free of nil bytes.
 
 #### Compilation and Payload Extraction
 
