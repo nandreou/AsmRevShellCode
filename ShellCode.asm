@@ -41,7 +41,6 @@ mov BYTE r12b, 0x2 ;Give the first value of stderr
 dup2:
 xor rax, rax
 xor rsi, rsi
-xor rdx, rdx
 
 mov al, 33 
 mov sil, r12b ;mov the newfd in the sil
