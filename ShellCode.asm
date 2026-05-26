@@ -30,7 +30,7 @@ pop rdi ;pop it
 ; push rbx
 
 ;Example of an IP PORT and Address family Bytes.
-;NOTE: THIS BYTE OPERATION IS TAKEN BY AI WORKS ONLY FOR THE SPECIFIC IP AND PORT THAT THE BYTES DEMONSTRATE
+;NOTE: THIS BIT OPERATION IS TAKEN BY AI WORKS ONLY FOR THE SPECIFIC IP AND PORT THAT THE BYTES DEMONSTRATE
 mov rbx, 0xDE10B9D1510E1113   ; Your target value XORed with 0x1111111111111111
 mov rcx, 0x1111111111111111   ; The mask (completely null-free)
 xor rbx, rcx                  ; rbx is now exactly 0xCF01A8C0401F0002!
