@@ -70,23 +70,6 @@ xor rdx, rdx                ;exit code
 syscall
 
 
-; mov cl, BYTE 0x3
-
-; testing:
-; xor rax, rax
-; push rcx
-
-; mov rax, 1
-; mov rdi, 1
-; mov rsi, rsp
-; mov rdx, 2
-; syscall
-
-; pop rcx
-; dec cl
-; cmp cl, BYTE 0x0
-; jge testing
-
 ;exit syscall
 xor rax, rax                
 mov al, 60                  
