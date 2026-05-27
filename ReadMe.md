@@ -30,3 +30,5 @@ push rbx                      ; Push the perfectly constructed struct to the sta
 
 ### THIS FOR EDUCATIONAL PURPOSES ONLY:
 Iam doing this the old way and trying not use AI for the code, I only to use it in order to understand things that I may miss as knowledge to achieve this. WHY ??!!! Because It's fun and I can !!!!
+
+Inspiration from *Hacking the Art of Exploitation (Jon Erickson)*. I may have never met the guy but .... thank you !!!
